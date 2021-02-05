@@ -1,0 +1,24 @@
+{
+  "name": "wordpress-dev-theme-plugin",
+  "version": "1.0.0",
+  "description": "Functions",
+  "main": "index.php",
+  "scripts": {
+    "wp i18n make-pot": "wp i18n make-pot ./ ./languages/wordpress-dev-theme-plugin-en_EN.pot --domain=wordpress_dev_theme",
+    "gettext ru_RU.mo": "msgfmt ./languages/wordpress-dev-theme-plugin-ru_RU.po -o ./languages/wordpress-dev-theme-plugin-ru_RU.mo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kostyasorokin/wordpress-dev-theme-plugin.git"
+  },
+  "keywords": [
+    "wordpress",
+    "wordpress-dev-theme-plugin"
+  ],
+  "author": "Konstantin Sorokin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kostyasorokin/wordpress-dev-theme-plugin/issues"
+  },
+  "homepage": "https://github.com/kostyasorokin/wordpress-dev-theme-plugin#readme"
+}

@@ -1,0 +1,28 @@
+# Copyright (C) 2021 Konstantin Sorokin
+# This file is distributed under the same license as the Wordpress Dev Theme Plugin plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wordpress Dev Theme Plugin 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress-dev-theme-plugin\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-02-05T11:29:26+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: wordpress_dev_theme\n"
+
+#. Plugin Name of the plugin
+msgid "Wordpress Dev Theme Plugin"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://konstantinsorokin.com/"
+msgstr ""
+
+#. Author of the plugin
+msgid "Konstantin Sorokin"
+msgstr ""

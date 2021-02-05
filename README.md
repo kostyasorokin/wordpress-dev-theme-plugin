@@ -1,1 +1,1 @@
-# wordpress-dev-theme-plugin
+# Wordpress Dev Theme Plugin
