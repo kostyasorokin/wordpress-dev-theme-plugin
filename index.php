@@ -15,7 +15,7 @@
  */
 
 /**
- * Disable Theme Editor
+ * Disable File Editor
  */
 define( 'DISALLOW_FILE_EDIT', true );
 
