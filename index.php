@@ -101,10 +101,15 @@ function remove_revslider_meta_tag() {
 add_filter( 'revslider_meta_generator', 'remove_revslider_meta_tag' );
 
 /**
- * Deregister Contact Form 7 style.css
+ * Contact Form 7 - deregister style.css
  * https://contactform7.com/loading-javascript-and-stylesheet-only-when-it-is-necessary/
  */
 add_filter( 'wpcf7_load_css', '__return_false' );
+
+/**
+ * Contact Form 7 - disable auto <p>
+ */
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
 /**
  * Remove .recentcomments on wp_head
