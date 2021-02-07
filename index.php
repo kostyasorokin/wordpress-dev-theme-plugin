@@ -15,6 +15,11 @@
  */
 
 /**
+ * Disable Theme Editor
+ */
+define( 'DISALLOW_FILE_EDIT', true );
+
+/**
  * Disable Post Revisions
  */
 define( 'WP_POST_REVISIONS', false, 0 );
