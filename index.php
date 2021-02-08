@@ -4,7 +4,7 @@
  * Plugin URI: https://konstantinsorokin.com/
  * Author: Konstantin Sorokin
  * Author URI: https://konstantinsorokin.com/
- * Version: 1.0.0
+ * Version: 1.0.1
  * License: GPL2+
  * Text Domain: wordpress-dev-theme-plugin
  * Domain Path: /languages/
@@ -36,6 +36,11 @@ function disable_autosave() {
 	wp_deregister_script('autosave');
 }
 add_action( 'wp_print_scripts', 'disable_autosave' );
+
+/**
+ * Disable wptexturize
+ */
+add_filter( 'run_wptexturize', '__return_false' );
 
 /**
  * Disable emoji's
