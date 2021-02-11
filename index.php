@@ -4,7 +4,7 @@
  * Plugin URI: https://konstantinsorokin.com/
  * Author: Konstantin Sorokin
  * Author URI: https://konstantinsorokin.com/
- * Version: 1.0.1
+ * Version: 1.0.2
  * License: GPL2+
  * Text Domain: wordpress-dev-theme-plugin
  * Domain Path: /languages/
@@ -140,3 +140,18 @@ function shapeSpace_check_enum($redirect, $request) {
 	if (preg_match('/\?author=([0-9]*)(\/*)/i', $request)) die();
 	else return $redirect;
 }
+
+/**
+ * Enable SVG support
+ *
+ * @param $type
+ *
+ * @return mixed
+ */
+function mimeTypes( $type )
+{
+	$type['svg'] = 'image/svg+xml';
+
+	return $type;
+}
+add_filter('upload_mimes', 'mimeTypes');
