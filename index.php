@@ -4,7 +4,7 @@
  * Plugin URI: https://konstantinsorokin.com/
  * Author: Konstantin Sorokin
  * Author URI: https://konstantinsorokin.com/
- * Version: 1.0.2
+ * Version: 1.0.3
  * License: GPL2+
  * Text Domain: wordpress-dev-theme-plugin
  * Domain Path: /languages/
@@ -98,12 +98,22 @@ remove_action('wp_head', 'wlwmanifest_link'); // function of editing content wit
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );
 
 /**
- * Remove Powered by Slider Revolution
+ * Remove Powered by Slider Revolution in HTML
  */
 function remove_revslider_meta_tag() {
 	return '';
 }
 add_filter( 'revslider_meta_generator', 'remove_revslider_meta_tag' );
+
+/**
+ * Remove W3 Total Cache comment in HTML
+ */
+add_filter( 'w3tc_can_print_comment', function( $w3tc_setting ) { return false; }, 10, 1 );
+
+/**
+ * Remove Yoast WordPress SEO plugin comment in HTML
+ */
+add_filter( 'wpseo_debug_markers', '__return_false' );
 
 /**
  * Contact Form 7 - deregister style.css
