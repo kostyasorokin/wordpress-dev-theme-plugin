@@ -127,6 +127,14 @@ add_filter( 'wpcf7_load_css', '__return_false' );
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
 /**
+ * TranslatePress - disable default CSS
+ */
+function trp_dequeue_style() {
+	wp_dequeue_style( 'trp-language-switcher-style' );
+}
+add_action( 'wp_enqueue_scripts', 'trp_dequeue_style', 9000 );
+
+/**
  * Remove .recentcomments on wp_head
  */
 function remove_recent_comments_style() {
