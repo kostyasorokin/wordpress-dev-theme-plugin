@@ -4,7 +4,7 @@
  * Plugin URI: https://konstantinsorokin.com/
  * Author: Konstantin Sorokin
  * Author URI: https://konstantinsorokin.com/
- * Version: 1.0.3
+ * Version: 1.1.0
  * License: GPL2+
  * Text Domain: wordpress-dev-theme-plugin
  * Domain Path: /languages/
@@ -41,6 +41,23 @@ add_action( 'wp_print_scripts', 'disable_autosave' );
  * Disable wptexturize
  */
 add_filter( 'run_wptexturize', '__return_false' );
+
+/**
+ * Remove jQuery Migrate
+ *
+ * @param $scripts
+ */
+function removeJqueryMigrate( $scripts )
+{
+	if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+		$script = $scripts->registered['jquery'];
+		if ( $script->deps ) {
+			$script->deps = array_diff( $script->deps, [ 'jquery-migrate' ] );
+		}
+	}
+}
+
+add_action( 'wp_default_scripts', 'removeJqueryMigrate' );
 
 /**
  * Disable emoji's
@@ -98,22 +115,12 @@ remove_action('wp_head', 'wlwmanifest_link'); // function of editing content wit
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );
 
 /**
- * Remove Powered by Slider Revolution in HTML
+ * Remove Powered by Slider Revolution
  */
 function remove_revslider_meta_tag() {
 	return '';
 }
 add_filter( 'revslider_meta_generator', 'remove_revslider_meta_tag' );
-
-/**
- * Remove W3 Total Cache comment in HTML
- */
-add_filter( 'w3tc_can_print_comment', function( $w3tc_setting ) { return false; }, 10, 1 );
-
-/**
- * Remove Yoast WordPress SEO plugin comment in HTML
- */
-add_filter( 'wpseo_debug_markers', '__return_false' );
 
 /**
  * Contact Form 7 - deregister style.css

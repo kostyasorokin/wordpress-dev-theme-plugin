@@ -1,6 +1,6 @@
 {
   "name": "wordpress-dev-theme-plugin",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Functions",
   "main": "index.php",
   "scripts": {
