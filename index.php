@@ -180,3 +180,13 @@ function mimeTypes( $type )
 	return $type;
 }
 add_filter('upload_mimes', 'mimeTypes');
+
+/**
+ * Remove W3 Total Cache comment in HTML
+ */
+add_filter( 'w3tc_can_print_comment', function( $w3tc_setting ) { return false; }, 10, 1 );
+
+/**
+ * Remove Yoast WordPress SEO plugin comment in HTML
+ */
+add_filter( 'wpseo_debug_markers', '__return_false' );
